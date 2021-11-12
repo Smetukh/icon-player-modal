@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <p>Window assetId variable = {window.assetId}</p>
+        <p>Window asset ID variable = {window.assetId}</p>
         <button className="viewButton"
           onClick={() => setShowModal(true)}
         >
