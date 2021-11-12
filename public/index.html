@@ -25,9 +25,36 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- <div id="player"></div> -->
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+    <!-- <script>
+      window
+        .threekitPlayer({
+          authToken: "59868a4b-25d0-48ae-9604-012e1071af3d",
+          el: document.getElementById("player"),
+          stageId: undefined,
+          assetId: "709987e6-2243-4b57-a39b-783285ec0b5f",
+          initialConfiguration: {
+            //  'Attribute Name': {
+            //     assetId: '4a9f7980-78a4-4ace-8cda-f2799936c4dc',
+            //     configuration: { 'key' : 'value'}
+            //   }
+          },
+          showConfigurator: false,
+          showAR: true,
+          cache: {
+            maxAge: 500,
+            scope: "v1.0",
+          },
+        })
+        .then(function (player) {
+          window.player = player;
+        });
+    </script> -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="modal-root"></div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
