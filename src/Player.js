@@ -7,7 +7,7 @@ const Player = ({ setShowModal }) => {
       try {
         window
         .threekitPlayer({
-          authToken: "59868a4b-25d0-48ae-9604-012e1071af3d",
+          authToken: "31bae9f8-18d7-4e8a-8b28-bdd680d0ecd0",
           el: document.getElementById("player"),
           stageId: undefined,
           assetId: window.assetId,
