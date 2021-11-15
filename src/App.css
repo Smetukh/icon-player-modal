@@ -18,12 +18,16 @@
 .viewButton {
   cursor: pointer;
   display: flex;
-  /* position: absolute; */
   border-radius: 14.5px;
   border: 1px solid #e8e8e8;
   background-color: #fff;
-  /* bottom: 10px;
-  left: 5px; */
+}
+.viewButton:hover {
+  background-color: #E2E2E2;
+}
+
+.viewButton:disabled {
+  cursor: not-allowed;
 }
 
 .arButtonText {
