@@ -4,6 +4,16 @@ import { THREEKIT_AUTH_TOKEN } from './constants/index';
 
 const Player = ({ setShowModal, assetId }) => {
 
+  const escFunction = (event) => {
+    if(event.keyCode === 27) {
+      setShowModal(false);
+    }
+  }
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction, false);
+    return () => window.removeEventListener("keydown", escFunction, false);
+  }, [])
+
   useEffect(() => {
     (async () => {
       try {
@@ -36,23 +46,16 @@ const Player = ({ setShowModal, assetId }) => {
 
   }, [assetId])
   return (
-    <div className="modal">
-      <div className="modal-wrapper">
+    <div className="modal"
+      // onClick={() => setShowModal(false)}
+    >
+      <div className="modal-wrapper"
+        // onClick={(e) => e.preventDefault()}
+      >
         <div className="modal-content">
-          {/* <div className='closeButton' onClick={() => { setShowModal(false) }}>X</div> */}
-          {/* <button className="closeButton"
-          onClick={() => setShowModal(false)}
-        > */}
-          {/* <img
-            // src="https://preview.threekit.com/js/4169b49e18e94d509b08ad80920c104a.svg"
-            src={require('./assets/SVG/close.svg').default}
-            alt="icon" /> */}
-          {/* <div className="arButtonText">View in 3D</div> */}
-          <div className='closeButton'><ClosePopup /></div>
-          {/* </button> */}
+          <div className='closeButton' onClick={() => setShowModal(false)}><ClosePopup /></div>
           <div id="player"></div>
         </div>
-
       </div>
     </div>
   );
