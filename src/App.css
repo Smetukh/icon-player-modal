@@ -95,6 +95,7 @@
   justify-content: flex-end;
   cursor: pointer; 
 }
+
 #player {
   min-height: 400px;
 }
