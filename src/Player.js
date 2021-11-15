@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { ClosePopup } from './assets/SVG/Close';
 
 const Player = ({ setShowModal, assetId }) => {
 
@@ -38,15 +39,16 @@ const Player = ({ setShowModal, assetId }) => {
       <div className="modal-wrapper">
         <div className="modal-content">
           {/* <div className='closeButton' onClick={() => { setShowModal(false) }}>X</div> */}
-          <div className="closeButton"
+          {/* <button className="closeButton"
           onClick={() => setShowModal(false)}
-        >
-          <img
+        > */}
+          {/* <img
             // src="https://preview.threekit.com/js/4169b49e18e94d509b08ad80920c104a.svg"
             src={require('./assets/SVG/close.svg').default}
-            alt="icon" />
+            alt="icon" /> */}
           {/* <div className="arButtonText">View in 3D</div> */}
-          </div>
+          <div className='closeButton'><ClosePopup /></div>
+          {/* </button> */}
           <div id="player"></div>
         </div>
 

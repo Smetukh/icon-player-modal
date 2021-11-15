@@ -8,7 +8,7 @@ import Player from './Player';
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [assetId, setAssetId] = useState('');
-  window.uniqueInternalCode = 'NTEX02121zzz'; // TODO: set global variable on client's web site
+  window.uniqueInternalCode = 'NTEX02121'; // TODO: set global variable on client's web site
 
   useEffect(() => {    
     (async () => {
