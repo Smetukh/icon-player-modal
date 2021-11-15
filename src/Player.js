@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { ClosePopup } from './assets/SVG/Close';
+import { THREEKIT_AUTH_TOKEN } from './constants/index';
 
 const Player = ({ setShowModal, assetId }) => {
 
@@ -9,7 +10,7 @@ const Player = ({ setShowModal, assetId }) => {
         window
         .threekitPlayer({
           assetId,
-          authToken: "31bae9f8-18d7-4e8a-8b28-bdd680d0ecd0",
+          authToken: THREEKIT_AUTH_TOKEN,
           el: document.getElementById("player"),
           stageId: undefined,
           initialConfiguration: {
