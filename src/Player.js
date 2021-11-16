@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ClosePopup } from './assets/SVG/Close';
+import { Close } from './assets/SVG/Close';
 import { THREEKIT_AUTH_TOKEN } from './constants/index';
 
 const Player = ({ setShowModal, assetId }) => {
@@ -53,7 +53,9 @@ const Player = ({ setShowModal, assetId }) => {
         // onClick={(e) => e.preventDefault()}
       >
         <div className="modal-content">
-          <div className='closeButton' onClick={() => setShowModal(false)}><ClosePopup /></div>
+          <div>
+            <div className='closeButton' onClick={() => setShowModal(false)}><Close /></div>
+          </div>
           <div id="player"></div>
         </div>
       </div>

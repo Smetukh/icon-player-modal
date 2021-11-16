@@ -27,7 +27,7 @@ function App() {
 
           const assets = [...assets1, ...assets2];
 
-          const assetObj = assets.find(item => item.name?.slice(0, -4) === window.uniqueInternalCode) || {}; // find matching data set in products
+          const assetObj = assets.find(item => item.name === window.uniqueInternalCode) || {}; // find matching data set in products
           setAssetId(assetObj.id);
         });        
       } catch (err) {
@@ -46,7 +46,7 @@ function App() {
           disabled={!assetId}
         >
           <img src={require('./assets/SVG/threekit3d.svg').default} alt="icon" />
-          <div className="arButtonText">View in 3D</div>
+          <div title={assetId ? undefined : 'Not available'} className="arButtonText">View in 3D</div>
           </button>
       </div>
       {showModal
