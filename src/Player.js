@@ -4,15 +4,12 @@ import { THREEKIT_AUTH_TOKEN } from './constants/index';
 
 const Player = ({ setShowModal, assetId }) => {
 
-  const escFunction = (event) => {
-    if(event.keyCode === 27) {
-      setShowModal(false);
-    }
-  }
+  
   useEffect(() => {
+    const escFunction = (event) => { event.keyCode === 27 && setShowModal(false) }
     document.addEventListener("keydown", escFunction, false);
     return () => window.removeEventListener("keydown", escFunction, false);
-  }, [])
+  }, [setShowModal])
 
   useEffect(() => {
     (async () => {
