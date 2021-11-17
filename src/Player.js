@@ -3,13 +3,11 @@ import { Close } from './assets/SVG/Close';
 import { THREEKIT_AUTH_TOKEN } from './constants/index';
 
 const Player = ({ setShowModal, assetId }) => {
-
-  
   useEffect(() => {
     const escFunction = (event) => { event.keyCode === 27 && setShowModal(false) }
     document.addEventListener("keydown", escFunction, false);
     return () => window.removeEventListener("keydown", escFunction, false);
-  }, [setShowModal])
+  }, [setShowModal]);
 
   useEffect(() => {
     (async () => {
@@ -20,38 +18,22 @@ const Player = ({ setShowModal, assetId }) => {
           authToken: THREEKIT_AUTH_TOKEN,
           el: document.getElementById("player"),
           stageId: undefined,
-          initialConfiguration: {
-            //  'Attribute Name': {
-            //     assetId: '4a9f7980-78a4-4ace-8cda-f2799936c4dc',
-            //     configuration: { 'key' : 'value'}
-            //   }
-          },
+          initialConfiguration: {},
           showConfigurator: false,
           showAR: true,
-          cache: {
-            maxAge: 500,
-            scope: "v1.0",
-          },
+          cache: { maxAge: 500, scope: "v1.0" },
         })
-        .then(function (player) {
-          window.player = player;
-        });
-      } catch (err) {
-        console.error(err)
-      }
+        .then(function (player) { window.player = player });
+      } catch (err) { console.error(err) }
     })();
+  }, [assetId]);
 
-  }, [assetId])
   return (
-    <div className="modal"
-      // onClick={() => setShowModal(false)}
-    >
-      <div className="modal-wrapper"
-        // onClick={(e) => e.preventDefault()}
-      >
+    <div className="modal">
+      <div className="modal-wrapper">
         <div className="modal-content">
-          <div>
-            <div className='closeButton' onClick={() => setShowModal(false)}><Close /></div>
+          <div className='closeButton'>
+            <div className='closeButton1' onClick={() => setShowModal(false)} ><Close /></div>
           </div>
           <div id="player"></div>
         </div>
