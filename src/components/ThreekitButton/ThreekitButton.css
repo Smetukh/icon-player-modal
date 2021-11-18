@@ -1,0 +1,26 @@
+.viewButton {
+  cursor: pointer;
+  display: flex;
+  border-radius: 14.5px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.viewButton:focus { outline:0; }
+
+.viewButton:hover {
+  background-color: #E2E2E2;
+}
+
+.viewButton:disabled {
+  cursor: not-allowed;
+}
+
+.arButtonText {
+  height: 100%;
+  margin-left: 10px;
+  padding-top: 7px;
+  margin-right: 15px;
+  font-size: 0.9em;
+  color: #1BA17B;
+}

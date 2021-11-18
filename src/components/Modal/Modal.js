@@ -1,7 +1,7 @@
 import React from "react";
 import reactDom from "react-dom";
 
-const modalRoot = document.getElementById('modal-root');
+const modalRoot = document.getElementById('threekit-button-modal');
 
 class Modal extends React.Component {
   constructor(props) {

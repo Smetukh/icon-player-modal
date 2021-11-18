@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import Modal from './Modal';
-import Player from './Player';
+import Modal from './components/Modal/Modal';
+import Player from './components/Player/Player';
 import { assetsUrl, page2 } from './constants';
 import './App.css';
+import ThreekitButton from './components/ThreekitButton/ThreekitButton';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [assetId, setAssetId] = useState('');
-  window.uniqueInternalCode = 'NTEX12921';
 
   useEffect(() => {    
     (async () => {
@@ -31,22 +31,15 @@ function App() {
       }
     })();
   }, []);
-
+  const props = { assetId, setShowModal }
   return (
-    <div className="App">
-      <div className="App-header">
-        <p>Window uniqueInternalCode variable = {window.uniqueInternalCode}</p>
+    <>
 
-        <button className="viewButton" onClick={() => setShowModal(true)} disabled={!assetId}>
-          <img src={require('./assets/SVG/threekit3d.svg').default} alt="icon" />
-          <div title={!!assetId ? undefined : 'Not available'} className="arButtonText">View in 3D</div>
-        </button>
-        
-      </div>
+      <ThreekitButton {...props} />
       {showModal
-        ? <Modal><Player assetId={assetId} setShowModal={setShowModal} /></Modal>
+        ? <Modal><Player {...props} /></Modal>
         : null}
-    </div>
+    </>
   );
 }
 
