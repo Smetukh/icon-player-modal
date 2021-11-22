@@ -12,7 +12,7 @@
   z-index: 999;
 }
 
-.modal-wrapper {
+.modalWrapper {
   height: 440px;
   width: 90%;
   opacity: 1;
@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
 }
 
-.modal-content {
+.modalContent {
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   border-radius: 3px;
 }
 
-.closeButton-wrapper {
+.closeButtonWrapper {
   display:flex;
   justify-content: flex-end;
 }
@@ -57,7 +57,7 @@
   background-color: rgba(240, 240, 240, 0.75);
 }
 
-#threekit-modal-player {
+#threekitModalPlayer {
   min-height: 400px;
 }
 

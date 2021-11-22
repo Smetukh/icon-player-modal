@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Close } from '../../assets/SVG/Close';
 import { THREEKIT_AUTH_TOKEN } from '../../constants/index';
-import './Player.css';
+import styles from './Player.module.css';
 
 const Player = ({ setShowModal, assetId }) => {
   useEffect(() => {
@@ -12,12 +12,15 @@ const Player = ({ setShowModal, assetId }) => {
 
   useEffect(() => {
     (async () => {
+      
+      
+      
       try {
         window
         .threekitPlayer({
           assetId,
           authToken: THREEKIT_AUTH_TOKEN,
-          el: document.getElementById("threekit-modal-player"),
+          el: document.getElementById(styles.threekitModalPlayer),
           stageId: undefined,
           initialConfiguration: {},
           showConfigurator: false,
@@ -30,13 +33,13 @@ const Player = ({ setShowModal, assetId }) => {
   }, [assetId]);
 
   return (
-    <div className="modal">
-      <div className="modal-wrapper">
-        <div className="modal-content">
-          <div className='closeButton-wrapper'>
-            <div className='closeButton' onClick={() => setShowModal(false)}><Close /></div>
+    <div className={styles.modal}>
+      <div className={styles.modalWrapper}>
+        <div className={styles.modalContent}>
+          <div className={styles.closeButtonWrapper}>
+            <div className={styles.closeButton} onClick={() => setShowModal(false)}><Close /></div>
           </div>
-          <div id="threekit-modal-player"></div>
+          <div id={styles.threekitModalPlayer}></div>
         </div>
       </div>
     </div>
