@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Player from './components/Player/Player';
 import { assetsUrl } from './constants';
-import styles from './App.css';
 import ThreekitButton from './components/ThreekitButton/ThreekitButton';
 
 function App() {
@@ -26,10 +25,10 @@ function App() {
   }, []);
   const props = { assetId, setShowModal }
   return (
-    <div className={styles.container}>
+    <>
       <ThreekitButton {...props} />
       {showModal ? <Player {...props} /> : null}
-    </div>
+    </>
   );
 }
 
